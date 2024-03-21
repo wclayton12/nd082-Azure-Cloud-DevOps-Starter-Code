@@ -1,49 +1,39 @@
 name: Python application test with Github Actions
-
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches:
     - master
     paths:
     - 'C2-AgileDevelopmentwithAzure/project/**'
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  
   build:
-    # The type of runner that the job will run on
+    # platform
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # checks out runner
     steps:
     - uses: actions/checkout@v2
-      
+    # error on 3.5
     - name: Set up Python 3.10.13
       uses: actions/setup-python@v1
       with:
         python-version: 3.10.13
 
-    - name: Verify system environment
-      run: |
-        pwd
-        ls -la
-
-    - name: Install dependencies
+    - name: run pip
       run: |
         cd "C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn"
         make install
       
-    - name: Lint with pylint
+    - name: run lint
       run: |
         cd "C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn"
         make lint
       
-    - name: Test with pytest
+    - name: run pytest
       run: |
         cd "C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn"
         make test
