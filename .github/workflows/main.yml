@@ -35,15 +35,15 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd "C2-Agile Development with Azure/project/starter_files/flask-sklearn"
+        cd "C2-Agile DevelopmentwithAzure/project/starter_files/flask-sklearn"
         make install
       
     - name: Lint with pylint
       run: |
-        cd "C2-Agile Development with Azure/project/starter_files/flask-sklearn"
+        cd "C2-Agile DevelopmentwithAzure/project/starter_files/flask-sklearn"
         make lint
       
     - name: Test with pytest
       run: |
-        cd "C2-Agile Development with Azure/project/starter_files/flask-sklearn"
+        cd "C2-Agile DevelopmentwithAzure/project/starter_files/flask-sklearn"
         make test
