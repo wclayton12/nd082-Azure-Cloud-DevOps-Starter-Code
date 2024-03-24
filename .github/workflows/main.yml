@@ -4,7 +4,7 @@ on:
     branches:
     - master
     paths:
-    - 'C2-AgileDevelopmentwithAzure/project/**'
+    - 'C2-AgileDevelopmentwithAzure/project/starter_files'
 
   workflow_dispatch:
 
